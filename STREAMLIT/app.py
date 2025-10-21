@@ -14,7 +14,9 @@ st.title("📊 Impact of time delta between rentals")
 # --- 1. GÉnÉration de DonnÉes d'Exemple ---
 # Remplacez cette section par la lecture de vos propres données (ex: pd.read_csv('votre_fichier.csv'))
 
-data_delay = pd.read_excel('get_around_delay_analysis.xlsx', sheet_name=['rentals_data', 'Documentation'])
+#data_delay = pd.read_excel('get_around_delay_analysis.xlsx', sheet_name=['rentals_data', 'Documentation'])
+data_delay = pd.read_excel("https://full-stack-assets.s3.eu-west-3.amazonaws.com/Deployment/get_around_delay_analysis.xlsx", sheet_name=['rentals_data', 'Documentation'])
+
 df = data_delay['rentals_data']
 
 # Affichage des premières lignes de données
