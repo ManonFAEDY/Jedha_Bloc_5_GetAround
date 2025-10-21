@@ -28,22 +28,3 @@ jobs:
           
           # La branche source à synchroniser
           src_branch: main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4 # Récupère le code de votre dépôt GitHub
-
-      - name: Deploy to Hugging Face Space
-        uses: xhochy/upload-to-hf-hub@v1 # Utilise l'action de la communauté
-        with:
-          # TOKEN : utilise le secret créé sur GitHub
-          hf_token: ${{ secrets.HF_TOKEN }} 
-          
-          # NOM DE L'ESPACE : votre nom d'utilisateur et le nom du Space
-          repo_id: MaFae/Jedha_Bloc_5_GetAround
-          
-          # Fichiers à ignorer (facultatif, ici on ignore le dossier .git)
-          path_ignore: .git
