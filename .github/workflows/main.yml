@@ -11,6 +11,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
+        uses: actions/checkout@v4 
+
+      - name: Deploy to Hugging Face Space (Mirror)
+        # UTILISEZ L'ACTION OFFICIELLE DE MIROIR
+        uses: actions/hub-mirror@v1 
+        with:
+          # L'authentification se fait via le token
+          hf_token: ${{ secrets.HF_TOKEN }} 
+          
+          # La cible est votre Space Hugging Face
+          hf_repo_id: MaFae/Jedha_Bloc_5_GetAround
+          
+          # La source est le dépôt GitHub actuel
+          src_repo_id: ${{ github.repository }} 
+          
+          # La branche source à synchroniser
+          src_branch: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v4 # Récupère le code de votre dépôt GitHub
 
       - name: Deploy to Hugging Face Space
