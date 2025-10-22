@@ -1,62 +1,58 @@
-C'est un excellent projet qui combine à la fois l'analyse de données et le déploiement de modèles \! Voici un `README.md` structuré pour présenter clairement ces deux aspects, comme demandé.
+
+# 🚗 GetAround: Rental Time Optimization and Pricing
+
+This project, carried out as part of a partnership with GetAround (the "Airbnb for cars"), is divided into two parts:
+
+1.  **Data Analysis and Visualization**: Creation of a dashboard to help product management optimize rental logistics.
+2.  **Machine Learning and API**: Development of a daily price prediction endpoint for car owners.
 
 -----
 
-# 🚗 GetAround: Optimisation du Temps de Location et Tarification
+## 1\. 📊 Data Analysis & Visualization (Streamlit Web Dashboard)
 
-Ce projet, réalisé dans le cadre d'un partenariat avec GetAround (le "Airbnb de la voiture"), est divisé en deux parties :
+The main objective is to provide factual insights to determine the best strategy for the **minimum delay between two rentals** to reduce customer dissatisfaction caused by late returns, while minimizing potential revenue loss.
 
-1.  **Analyse de Données et Visualisation** : Création d'un tableau de bord pour aider la gestion produit à optimiser la logistique des locations.
-2.  **Machine Learning et API** : Développement d'un endpoint de prédiction de prix journaliers pour les propriétaires de voitures.
+The interactive dashboard is built with **Streamlit** and addresses key product management questions regarding the **threshold** (minimum delay duration) and the **scope** (all cars vs. Connect cars only).
 
------
+### Dashboard Features
 
-## 1\. 📊 Analyse & Visualisation (Web Dashboard Streamlit)
+  * **Time Delta Analysis**: Visualization of the distribution of time elapsed between two consecutive rentals, with filters to simulate the impact of a minimum delay.
+  * **Previous Delay Impact**: Study of the correlation between the delay of the previous rental and the status of the following rental (`successful` or `failed`), segmented by check-in type (`mobile` or `connect`).
+  * **Key Metrics**: Display of the percentages of potentially affected rentals to help find the right balance between improving user experience and optimizing revenue.
 
-L'objectif principal est de fournir des informations factuelles pour déterminer la meilleure stratégie de **délai minimum entre deux locations** afin de réduire l'insatisfaction client due aux retards de restitution, tout en minimisant la perte de revenus potentielle.
-
-Le tableau de bord interactif est construit avec **Streamlit** et répond aux questions clés de la gestion produit concernant le **seuil** (durée du délai minimum) et le **champ d'application** (toutes les voitures vs. uniquement les voitures Connect).
-
-### Fonctionnalités du Dashboard
-
-  * **Analyse du Delta de Temps** : Visualisation de la distribution du temps écoulé entre deux locations consécutives, avec des filtres pour simuler l'impact d'un délai minimum.
-  * **Impact du Retard Précédent** : Étude de la corrélation entre le retard de la location précédente et l'état de la location suivante (`successful` ou `failed`), segmentée par type de check-in (`mobile` ou `connect`).
-  * **Mesures Clés** : Affichage des pourcentages de locations potentiellement affectées pour aider à trouver le juste équilibre entre l'amélioration de l'expérience utilisateur et l'optimisation des revenus.
-
-### 🔗 Liens de Production
+### 🔗 Production Links
 
 | Service | URL |
 | :--- | :--- |
-| **Tableau de Bord Streamlit** | `[https://huggingface.co/docs/hub/en/spaces-sdks-streamlit](https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround)` |
+| **Streamlit Dashboard** | `[https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround](https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround)` |
 
+### Technologies Used
 
-### Technologies Utilisées
-
-  * **Framework** : Streamlit
-  * **Analyse/Manipulation de Données** : Pandas, NumPy
-  * **Visualisation** : Plotly Express
+  * **Framework**: Streamlit
+  * **Data Analysis/Manipulation**: Pandas, NumPy
+  * **Visualization**: Plotly Express
 
 -----
 
-## 2\. 🤖 Pilier Machine Learning & API
+## 2\. 🤖 Machine Learning & API
 
-Ce volet se concentre sur l'optimisation de la tarification journalière pour les propriétaires, en utilisant un modèle de Machine Learning entraîné sur des données de tarification de véhicules.
+This section focuses on optimizing daily pricing for owners, using a Machine Learning model trained on vehicle pricing data.
 
-Le modèle est exposé via une API pour permettre son intégration dans les systèmes de production.
+A notebook is provided to show the preparation of the model used in the API.
 
-### Endpoint /predict
+The model is exposed via an API to allow its integration into production systems.
 
-L'API est hébergée en ligne et propose un endpoint `/predict` qui permet de soumettre les caractéristiques d'un véhicule (modèle, kilométrage, puissance, options, etc.) et de recevoir une estimation du prix de location journalier.
+### /predict Endpoint
 
+The API is hosted online and provides a `/predict` endpoint that allows submitting a vehicle's characteristics (model, mileage, power, options, etc.) and receiving an estimated daily rental price.
 
-### 🔗 Liens de Production
+### 🔗 Production Links
 
 | Service | URL |
 | :--- | :--- |
-| **Documentation API** | `[https://huggingface.co/docs](https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/)` |
+| **API Documentation** | `[https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/](https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/)` |
 
-
-#### Exemple d'Entrée (JSON)
+#### Input Example (JSON)
 
 ```json
 {
@@ -80,7 +76,7 @@ L'API est hébergée en ligne et propose un endpoint `/predict` qui permet de so
 }
 ```
 
-#### Exemple de Sortie (JSON)
+#### Output Example (JSON)
 
 ```json
 {
@@ -88,11 +84,11 @@ L'API est hébergée en ligne et propose un endpoint `/predict` qui permet de so
 }
 ```
 
-### Technologies Utilisées
+### Technologies Used
 
-  * **API Framework** : FastAPI (recommandé pour la performance et les docs automatiques)
-  * **Modèle ML** : Scikit-Learn Pipeline (enregistré via `joblib`)
-  * **Déploiement** : Hugging Face Spaces (ou autre service cloud)
+  * **API Framework**: FastAPI (recommended for performance and automatic docs)
+  * **ML Model**: Scikit-Learn Pipeline (saved via `joblib`)
+  * **Deployment**: Hugging Face Spaces (or other cloud service)
 
 -----
 
