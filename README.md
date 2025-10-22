@@ -24,7 +24,7 @@ The interactive dashboard is built with **Streamlit** and addresses key product 
 
 | Service | URL |
 | :--- | :--- |
-| **Streamlit Dashboard** | `[https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround](https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround)` |
+| **Streamlit Dashboard** | `[https://huggingface.co/spaces/MaFae/Jedha_Bloc_5_GetAround]` |
 
 ### Technologies Used
 
@@ -50,7 +50,7 @@ The API is hosted online and provides a `/predict` endpoint that allows submitti
 
 | Service | URL |
 | :--- | :--- |
-| **API Documentation** | `[https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/](https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/)` |
+| **API Documentation** | `[https://mafae-jedha-bloc-5-getaround-api.hf.space/docs#/]` |
 
 #### Input Example (JSON)
 
