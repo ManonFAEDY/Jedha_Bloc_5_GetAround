@@ -27,8 +27,4 @@ RUN pip install -r /dependencies/requirements.txt
 # Always use --chown=user when using HUGGINGFACE to avoid permission errors
 COPY --chown=user . $HOME/app
 
-#CMD project run app.py --port 4000 --reload
-#CMD python app.py
-
 CMD fastapi run app.py --port 7860
-#CMD gunicorn app:app  --bind 0.0.0.0:7860 --worker-class uvicorn.workers.UvicornWorker

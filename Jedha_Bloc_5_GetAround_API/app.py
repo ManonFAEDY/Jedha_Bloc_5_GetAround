@@ -145,7 +145,7 @@ async def predict(predictionFeatures: PredictionFeatures):
     "winter_tires": true
     }
 
-    rental_price_per_day :   152 (real)    //    137.34634 (potential prediction)
+    rental_price_per_day :   152 (real)
     """
     # Read data 
     variables = pd.DataFrame({"model_key": [predictionFeatures.model_key],
